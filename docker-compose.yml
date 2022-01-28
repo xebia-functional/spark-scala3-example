@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  spark-master:
+    build: ./docker
+    environment:
+      - SPARK_MODE=master
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    ports:
+      - '4040:4040'
+      - '8080:8080'
+    volumes:
+      - './spark-apps:/opt/spark-apps'
+  spark-worker:
+    build: ./docker
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_WORKER_CORES=1
+    ports:
+      - 8080
