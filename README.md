@@ -1,7 +1,7 @@
 # Spark + Scala 3 example
 
-This is a companion repo for this blogpost (TODO link to blogpost once
-published).
+This is a companion repo for [this
+blogpost](https://www.47deg.com/blog/using-scala-3-with-spark/)
 
 It contains two Spark applications: a hello-world and a Travelling Salesman
 Problem solver.
